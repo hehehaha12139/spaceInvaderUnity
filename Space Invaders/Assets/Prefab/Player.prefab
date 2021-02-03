@@ -234,3 +234,7 @@ MonoBehaviour:
   speed: 0.1
   maxBound: 10.5
   minBound: -10.5
+  fireSoundEffect: {fileID: 8300000, guid: ed037721ed4a2a34c9426a8fea1dcd82, type: 3}
+  bullet: {fileID: 0}
+  bulletSpawn: {fileID: 0}
+  fireRate: 0

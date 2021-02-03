@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Transform player;
     public float speed;
     public float maxBound, minBound;
+    public AudioClip fireSoundEffect;
 
     public GameObject bullet;
     public Transform bulletSpawn;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time > nextFire) 
         {
             nextFire = Time.time + fireRate;
+            AudioSource.PlayClipAtPoint(fireSoundEffect, gameObject.transform.position);
             Instantiate(bullet, bulletSpawn.position + new Vector3(0.0f, 0.0f, 0.5f), bulletSpawn.rotation);
         }
     }

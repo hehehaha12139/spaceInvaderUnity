@@ -12,7 +12,8 @@ public class GlobalEnemyController : MonoBehaviour
     public float fireRate;
     private int moveSpeed;
     private int allChild;
-
+    public GameObject ufo;
+    public static bool isUFO;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +22,17 @@ public class GlobalEnemyController : MonoBehaviour
         allChild = enemies.childCount;
         moveSpeed = 0;
         fireRate = 0.997f;
+        isUFO = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Random.value > 0.9995 && !isUFO) 
+        {
+            isUFO = true;
+            Instantiate(ufo, new Vector3(0.0f, 0.0f, 9.0f), new Quaternion());
+        }
     }
 
     void MoveEnemy() 

@@ -16,7 +16,7 @@ public class BulletController : MonoBehaviour
     {
         bullet.position += Vector3.forward * speed;
 
-        if (bullet.position.z >= 8)
+        if (bullet.position.z >= 12)
             Destroy(gameObject);
     }
 

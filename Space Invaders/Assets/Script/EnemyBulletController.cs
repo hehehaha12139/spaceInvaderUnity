@@ -6,6 +6,7 @@ public class EnemyBulletController : MonoBehaviour
 {
     public float speed;
     private Transform bullet;
+    public AudioClip deathKnell;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class EnemyBulletController : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);
             GlobalController.isPlayerDead = true;
+            AudioSource.PlayClipAtPoint(deathKnell, gameObject.transform.position);
         }
         else if (other.tag == "Base")
         {
